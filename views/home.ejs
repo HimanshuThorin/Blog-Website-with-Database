@@ -1,0 +1,17 @@
+<%-include("partials/header") -%>
+
+    <h1>Home</h1>
+    <p>
+        <%= homeStartingContent %>
+    </p>
+
+    <% posts.forEach(function(arrayItems){ %>
+        <h2>
+            <%= arrayItems.title %>
+        </h2>
+        <p>
+            <%=arrayItems.content.substring(0,100) + "... " %><a href="/post/<%=arrayItems._id %>">Read more</a>
+        </p>
+        <% }) %>
+
+            <%-include("partials/footer") -%>

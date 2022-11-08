@@ -1,0 +1,22 @@
+<%-include("partials/header")-%>
+
+    <h1><%= items.title %></h1>
+   <p><%= items.content%></p>
+    <a class="deleteLink" id="deleteP" onclick="myFunction()" href="">Delete</a>
+    <a class = "editLink" href="/edit/<%=requestedPostId%>">Edit</a>
+
+    <script>
+        function myFunction(){
+            let text = "";
+            if(confirm("Do you really want to DELETE '( <%=items.title%> ) 'blog?")){
+                text = "/delete/<%=requestedPostId%>"
+            }else{
+                text= ""
+            }
+            document.getElementById("deleteP").setAttribute("href", text);
+        }
+    </script>
+
+<%-include("partials/footer")-%>
+
+

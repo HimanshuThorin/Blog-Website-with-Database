@@ -1,0 +1,18 @@
+<%-include("partials/header")-%>
+<h1>Update Blog </h1>
+<form action="/edit/<%=requestedEditId%>" method="post">
+
+    <div class="mb-3">
+        <label>Title</label>
+        <input type="text" class="form-control" name="postTitle" value="<%=foundPost.title%>">
+      </div>
+      <div class="mb-3">
+        <label>Post</label>
+        <textarea class="form-control" rows="10" name="postContent"><%=foundPost.content%></textarea><br>
+      </div>
+      <button type="submit" class="btn btn-primary" name="btn" value="save">Save</button>
+      <button type="submit" class="btn btn-primary" name="btn" value="cancel">Cancel</button>
+</form>
+
+
+<%-include("partials/footer") -%>
